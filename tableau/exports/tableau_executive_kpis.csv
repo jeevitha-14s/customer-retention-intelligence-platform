@@ -1,0 +1,2 @@
+total_customers,active_customers,churned_customers,churn_rate_pct,revenue,average_historical_clv,average_customer_lifespan_days,revenue_at_risk,churn_definition_days
+93358,38106,55252,59.18,13221498.11,141.62,3.61,7511766.68,180

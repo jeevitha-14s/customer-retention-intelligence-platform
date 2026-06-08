@@ -140,11 +140,3 @@ Screenshot placeholders are documented in `dashboard_screenshots/README.md`.
 - At Risk customers generated 4.71M in historical revenue and are the highest-priority win-back audience.
 
 Full report: `reports/business_insights_report.md`.
-
-## Resume Bullet Points
-
-- Built an end-to-end customer retention BI platform using Python, Pandas, MySQL, and Tableau-ready exports to analyze churn, CLV, cohorts, and revenue impact across 93K+ ecommerce customers.
-- Designed a normalized MySQL schema with customer, order, order item, and product tables, then wrote advanced SQL using joins, CTEs, window functions, `RANK()`, `DENSE_RANK()`, `LAG()`, and running totals.
-- Developed RFM segmentation and churn analysis pipelines that classified customers into VIP, Loyal, At Risk, Lost, and Developing tiers for targeted retention strategy.
-- Created monthly cohort retention and revenue retention datasets for Tableau heatmaps and executive dashboards.
-- Produced business recommendations identifying 7.51M in estimated revenue at risk and prioritizing high-value At Risk customer reactivation.

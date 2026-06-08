@@ -1,6 +1,6 @@
 # Customer Retention Intelligence Platform
 
-Portfolio-grade Data Analyst project for customer retention, churn, customer lifetime value, cohort analysis, revenue impact, and BI dashboarding.
+Data Analyst project for customer retention, churn, customer lifetime value, cohort analysis, revenue impact, and BI dashboarding.
 
 ## Project Overview
 

@@ -10,6 +10,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS stg_customers;
 DROP TABLE IF EXISTS stg_orders;
 DROP TABLE IF EXISTS stg_order_items;
+DROP TABLE IF EXISTS stg_order_reviews;
 DROP TABLE IF EXISTS stg_products;
 DROP TABLE IF EXISTS stg_category_translation;
 
@@ -59,6 +60,16 @@ CREATE TABLE stg_category_translation (
     product_category_name_english VARCHAR(100)
 );
 
+CREATE TABLE stg_order_reviews (
+    review_id VARCHAR(50),
+    order_id VARCHAR(50),
+    review_score TINYINT,
+    review_comment_title TEXT,
+    review_comment_message TEXT,
+    review_creation_date DATETIME NULL,
+    review_answer_timestamp DATETIME NULL
+);
+
 LOAD DATA LOCAL INFILE 'data/raw/olist_customers_dataset.csv'
 INTO TABLE stg_customers
 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
@@ -98,6 +109,16 @@ CHARACTER SET utf8mb4
 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
+
+LOAD DATA LOCAL INFILE 'data/raw/olist_order_reviews_dataset.csv'
+INTO TABLE stg_order_reviews
+FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(review_id, order_id, review_score, review_comment_title, review_comment_message, @creation_date, @answer_timestamp)
+SET
+    review_creation_date = NULLIF(@creation_date, ''),
+    review_answer_timestamp = NULLIF(@answer_timestamp, '');
 
 INSERT INTO customers (
     customer_unique_id,
@@ -212,6 +233,22 @@ INNER JOIN orders o
 INNER JOIN products p
     ON i.product_id = p.product_id;
 
+INSERT INTO order_reviews (
+    review_id,
+    order_id,
+    review_score,
+    review_comment_message
+)
+SELECT
+    r.review_id,
+    MIN(r.order_id) AS order_id,
+    MAX(r.review_score) AS review_score,
+    MAX(NULLIF(r.review_comment_message, '')) AS review_comment_message
+FROM stg_order_reviews r
+INNER JOIN orders o
+    ON r.order_id = o.order_id
+GROUP BY r.review_id;
+
 SET FOREIGN_KEY_CHECKS = 1;
 
 SELECT 'customers' AS table_name, COUNT(*) AS row_count FROM customers
@@ -220,4 +257,6 @@ SELECT 'products', COUNT(*) FROM products
 UNION ALL
 SELECT 'orders', COUNT(*) FROM orders
 UNION ALL
-SELECT 'order_items', COUNT(*) FROM order_items;
+SELECT 'order_items', COUNT(*) FROM order_items
+UNION ALL
+SELECT 'order_reviews', COUNT(*) FROM order_reviews;

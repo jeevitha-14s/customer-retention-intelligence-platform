@@ -1,0 +1,31 @@
+value_tier,complaint_theme,mention_count,negative_review_count
+At Risk,delivery,1089,5288
+At Risk,quality,320,5288
+At Risk,price,133,5288
+At Risk,service,80,5288
+At Risk,expectations,40,5288
+Developing,delivery,1079,5143
+Developing,quality,289,5143
+Developing,price,117,5143
+Developing,service,69,5143
+Developing,expectations,32,5143
+Lost,delivery,599,3379
+Lost,quality,214,3379
+Lost,price,77,3379
+Lost,service,41,3379
+Lost,expectations,26,3379
+Loyal,delivery,1357,6577
+Loyal,quality,367,6577
+Loyal,price,144,6577
+Loyal,service,71,6577
+Loyal,expectations,55,6577
+Unknown,delivery,534,2262
+Unknown,price,77,2262
+Unknown,service,34,2262
+Unknown,quality,12,2262
+Unknown,expectations,2,2262
+VIP,delivery,346,1662
+VIP,quality,98,1662
+VIP,price,63,1662
+VIP,service,19,1662
+VIP,expectations,11,1662

@@ -11,6 +11,7 @@ SCRIPTS = [
     ROOT / "python" / "segmentation.py",
     ROOT / "python" / "cohort_analysis.py",
     ROOT / "python" / "churn_analysis.py",
+    ROOT / "python" / "05_sentiment_analysis.py",
 ]
 
 

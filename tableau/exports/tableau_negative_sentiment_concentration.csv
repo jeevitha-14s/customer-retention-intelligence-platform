@@ -1,0 +1,6 @@
+value_tier,customers,negative_customers,mixed_negative_customers,positive_customers,negative_pct,mixed_negative_pct,dissatisfied_pct
+VIP,6475,1364,184,4927,21.07,2.84,23.91
+Loyal,27100,5846,630,20624,21.57,2.32,23.9
+At Risk,21817,4590,598,16629,21.04,2.74,23.78
+Developing,22104,4565,569,16970,20.65,2.57,23.23
+Lost,15258,2937,427,11894,19.25,2.8,22.05

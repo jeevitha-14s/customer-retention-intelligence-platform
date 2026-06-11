@@ -6,6 +6,7 @@ CREATE DATABASE customer_retention_intelligence;
 USE customer_retention_intelligence;
 
 DROP TABLE IF EXISTS order_items;
+DROP TABLE IF EXISTS order_reviews;
 DROP TABLE IF EXISTS orders;
 DROP TABLE IF EXISTS products;
 DROP TABLE IF EXISTS customers;
@@ -66,6 +67,16 @@ CREATE TABLE order_items (
     FOREIGN KEY (product_id) REFERENCES products(product_id),
     INDEX idx_items_product_id (product_id),
     INDEX idx_items_seller_id (seller_id)
+);
+
+CREATE TABLE order_reviews (
+    review_id VARCHAR(50) PRIMARY KEY,
+    order_id VARCHAR(50) NOT NULL,
+    review_score TINYINT,
+    review_comment_message TEXT,
+    FOREIGN KEY (order_id) REFERENCES orders(order_id),
+    INDEX idx_reviews_order_id (order_id),
+    INDEX idx_reviews_score (review_score)
 );
 
 CREATE OR REPLACE VIEW customer_order_summary AS

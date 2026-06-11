@@ -1,0 +1,16 @@
+value_tier,sentiment_label,customers,segment_customers,sentiment_pct
+At Risk,Positive,16629,21817,76.22
+At Risk,Negative,4590,21817,21.04
+At Risk,Mixed Negative,598,21817,2.74
+Developing,Positive,16970,22104,76.77
+Developing,Negative,4565,22104,20.65
+Developing,Mixed Negative,569,22104,2.57
+Lost,Positive,11894,15258,77.95
+Lost,Negative,2937,15258,19.25
+Lost,Mixed Negative,427,15258,2.8
+Loyal,Positive,20624,27100,76.1
+Loyal,Negative,5846,27100,21.57
+Loyal,Mixed Negative,630,27100,2.32
+VIP,Positive,4927,6475,76.09
+VIP,Negative,1364,6475,21.07
+VIP,Mixed Negative,184,6475,2.84

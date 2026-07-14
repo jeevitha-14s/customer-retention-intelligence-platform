@@ -8,7 +8,7 @@ The Customer Retention Intelligence Platform is an end-to-end analytics project 
 
 The project prioritizes analytics and BI over machine learning. It includes normalized MySQL modeling, advanced SQL analysis, Pandas-based data preparation, RFM segmentation, monthly cohort analysis, churn and CLV calculations, Tableau-ready exports, and a professional business insights report.
 
-## Architectures
+## Architecture
 
 ```mermaid
 flowchart LR
